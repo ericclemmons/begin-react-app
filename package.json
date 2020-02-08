@@ -1,0 +1,43 @@
+{
+  "name": "begin-app",
+  "description": "Begin Create React App + API",
+  "version": "0.0.0",
+  "proxy": "http://localhost:3333",
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "npm run api & react-scripts start",
+    "build": "react-scripts build",
+    "test:i": "react-scripts test",
+    "eject": "react-scripts eject",
+    "api": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
+    "test": "cross-env NODE_ENV=testing PORT=6666 tape test/*-test.js ./test/**/*-test.js | tap-spec",
+    "serve": "npm run build && npm run api"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@architect/sandbox": "^1.6.0",
+    "@begin/data": "^1.1.7",
+    "cross-env": "^7.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.0",
+    "tiny-json-http": "^7.1.2"
+  }
+}
